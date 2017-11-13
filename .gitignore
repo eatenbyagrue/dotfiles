@@ -1,0 +1,13 @@
+# Ignore everything
+/*
+
+# Except these
+!.gitignore
+!.vimrc
+
+# Do it like this for subdirectories: Only the config file will be comitted
+!.i3/
+.i3/*
+!.i3/config
+
+
