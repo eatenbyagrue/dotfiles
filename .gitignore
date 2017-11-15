@@ -1,13 +1,21 @@
+# gitignore for dotfiles!
 # Ignore everything
 /*
 
 # Except these
 !.gitignore
 !.vimrc
+!.Xmodmap
+!.Xresources
+!.extend.Xresources
 
 # Do it like this for subdirectories: Only the config file will be comitted
 !.i3/
 .i3/*
 !.i3/config
+
+!.Xresources-Themes/
+.Xresources-Themes/*
+!.Xresources-Themes/FrontEndDelight
 
 

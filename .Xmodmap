@@ -1,0 +1,35 @@
+keycode  30 = u U udiaeresis Udiaeresis
+
+keycode  32 = o O odiaeresis Odiaeresis
+
+keycode  38 = a A adiaeresis Adiaeresis
+keycode  39 = s S ssharp
+
+keycode 108 = Mode_switch NoSymbol Mode_switch
+
+
+!
+! Puts Control to Super Key (which is in Caps Lock Position on my dellcb13)
+!
+
+!remove mod4 = Super_L
+!add control = Super_L
+
+!
+!Swap Caps_Lock and Control_L
+!
+! IS now set with setxkbmap -option caps:ctrl_modifier
+!remove Lock = Caps_Lock
+!remove Control = Control_L
+!keysym Control_L = Caps_Lock
+!keysym Caps_Lock = Control_L
+!add Lock = Caps_Lock
+!add Control = Control_L
+
+!
+!Swap Backslash and Backspace (for 60% Keyboards to feel like HHKB)
+!
+
+
+!keycode  51 = BackSpace BackSpace BackSpace BackSpace Delete NoSymbol Delete
+!keycode  22 = backslash bar backslash bar
