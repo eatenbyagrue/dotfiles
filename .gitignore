@@ -18,4 +18,18 @@
 .Xresources-Themes/*
 !.Xresources-Themes/FrontEndDelight
 
+!.config/
+.config/*
+
+!.config/zathura
+.config/zathura/*
+!.config/zathura/zathurarc
+
+!.config/ranger/
+.config/ranger/*
+!.config/ranger/rc.conf
+
+!.config/feh
+.config/feh/*
+!.config/feh/keys
 
