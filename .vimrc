@@ -84,7 +84,10 @@ set undofile
 
 "Remap Leader Key
 let mapleader = ","
-
+"Remap Esc woohoo
+inoremap jj <Esc>
+"Remap C-e to jump at end of line in insert mode
+inoremap <C-e> <C-o>A
 "Fix search an replace
 "nnoremap / /\v
 "vnoremap / /\v

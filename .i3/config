@@ -35,6 +35,7 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
+#bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec --no-startup-id dmenu_recency
 
 # launch categorized menu
@@ -298,29 +299,6 @@ mode "resize" {
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
-# Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id compton -b
-# exec --no-startup-id nitrogen --restore; sleep 1
-#exec --no-startup-id manjaro-hello
-#exec_always --no-startup-id xsetroot -solid "#242424"
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-#exec --no-startup-id clipit
-# exec --no-startup-id blueman
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
-exec --no-startup-id start_conky_solarized
-# exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 15 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id setxkbmap -option caps:ctrl_modifier
-# replace caps lock with ctrl. A life saver!
-exec_always --no-startup-id setxkbmap -option caps:super
-exec_always --no-startup-id sleep 4; xmodmap ~/.Xmodmap
 # Color palette used for the terminal ( ~/.extend.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
@@ -524,3 +502,28 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# Autostart applications
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id compton -b
+# exec --no-startup-id nitrogen --restore; sleep 1
+#exec --no-startup-id manjaro-hello
+#exec_always --no-startup-id xsetroot -solid "#242424"
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
+#exec --no-startup-id clipit
+# exec --no-startup-id blueman
+# exec_always --no-startup-id sbxkb
+# exec --no-startup-id start_conky_maia
+exec --no-startup-id start_conky_solarized
+# exec --no-startup-id start_conky_green
+#exec --no-startup-id xautolock -time 15 -locker blurlock
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_xcursor
+# replace caps lock with ctrl. A life saver!
+#exec_always --no-startup-id setxkbmap -option caps:ctrl_modifier
+#exec_always --no-startup-id "sh -c 'sleep 3; xmodmap ~/.Xmodmap'"
+exec_always --no-startup-id xmodmap ~/.Xmodmap
+#exec_always --no-startup-id setxkbmap -option ctrl:caps

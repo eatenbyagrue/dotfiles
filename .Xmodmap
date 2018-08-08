@@ -12,9 +12,10 @@ keycode 108 = Mode_switch NoSymbol Mode_switch
 ! Puts Control to Super Key (which is in Caps Lock Position on my dellcb13)
 !
 
-!remove mod4 = Super_L
-!add control = Super_L
-
+remove mod4 = Super_L
+add control = Super_L
+remove Lock = Caps_Lock
+add control = Caps_Lock
 !
 !Swap Caps_Lock and Control_L
 !
