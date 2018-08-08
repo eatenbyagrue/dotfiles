@@ -10,12 +10,18 @@ keycode 108 = Mode_switch NoSymbol Mode_switch
 
 !
 ! Puts Control to Super Key (which is in Caps Lock Position on my dellcb13)
+! When working on just the Laptop, comment in the following 4 commands
+! Clashes with HHKB
 !
 
+! Set Left Super Key to execute Ctrl function
 remove mod4 = Super_L
 add control = Super_L
-remove Lock = Caps_Lock
-add control = Caps_Lock
+
+! Set Left Control Key to execute mod4 function
+remove control = Control_L
+add mod4 = Control_L 
+
 !
 !Swap Caps_Lock and Control_L
 !
