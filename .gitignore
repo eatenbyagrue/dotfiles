@@ -9,6 +9,7 @@
 !.Xresources
 !.extend.Xresources
 !.spacemacs
+!.bashrc
 
 # Do it like this for subdirectories: Only the config file will be comitted
 !.i3/
