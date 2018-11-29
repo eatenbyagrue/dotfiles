@@ -36,9 +36,9 @@ colors() {
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 # Set default editing mode to vim mode!
-# set -o vi
 
-alias 'ctps'='cd ~/Documents/2017.ws/Central_Topics_In_Phil_Science/'
-alias 'propc'='cd ~/Documents/2018.ss/Carnap/paper-proposal/'
-alias 'mlexam'='cd ~/Documents/2018.ss/Modal\ Logic/exam'
-alias 'propml'='cd ~/Documents/2018.ss/Epistemology\ of\ Machine\ Learning/paper-proposal/'
+alias 'ctps'='cd ~/Documents/2018.ws/Central\ Topics\ in\ Philosophy\ of\ Science/'
+
+# Let there be color in grep!
+export GREP_OPTIONS=' — color=auto'
+
