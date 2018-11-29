@@ -39,6 +39,4 @@ colors() {
 
 alias 'ctps'='cd ~/Documents/2018.ws/Central\ Topics\ in\ Philosophy\ of\ Science/'
 
-# Let there be color in grep!
-export GREP_OPTIONS=' — color=auto'
 
