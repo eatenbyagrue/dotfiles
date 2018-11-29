@@ -18,7 +18,7 @@ hide_edge_borders none
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+# bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -59,7 +59,9 @@ bindsym $mod+Ctrl+m exec pavucontrol
 
 # Screen Control
 bindsym $mod+o exec "~/.screenlayout/HDMIonly.sh; sleep 3; exec notify-send 'HDMI Only'"
-bindsym $mod+p exec "~/.screenlayout/eDP1only.sh; sleep 3; exec notify-send 'eDP1 Only'"
+bindsym $mod+Shift+o exec "~/.screenlayout/eDP1only.sh; sleep 3; exec notify-send 'eDP1 Only'"
+bindsym $mod+p exec "~/.screenlayout/HDMIandeDP1.sh; sleep 3; exec notify-send 'HDMI and eDP1'"
+bindsym $mod+m move workspace to output left
 
 # Volume Control
 bindsym F11 "exec amixer set Master 5%-; exec notify-send 'Volume Down '"
@@ -306,36 +308,6 @@ mode "resize" {
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
-# Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nitrogen --restore;
-# exec --no-startup-id compton -b
-# exec --no-startup-id nitrogen --restore; sleep 1
-#exec --no-startup-id manjaro-hello
-exec_always --no-startup-id xsetroot -solid "#FF2424"
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id keynav
-exec --no-startup-id emacs
-exec --no-startup-id qutebrowser
-#exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly"
-#exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly/3lxlwac0rfmx.png_"
-exec_always --no-startup-id feh --no-fehbg --bg-center --recursive --randomize "${HOME}/Pictures/dailyminimal.com" --image-bg "#f1eff0"
-#exec --no-startup-id clipit
-# exec --no-startup-id blueman
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
-exec --no-startup-id start_conky_solarized
-# exec --no-startup-id start_conky_green
-# exec --no-startup-id xautolock -time 15 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id setxkbmap -option caps:ctrl_modifier
-# replace caps lock with ctrl. A life saver!
-exec_always --no-startup-id setxkbmap -option caps:super
-exec_always --no-startup-id sleep 4; xmodmap ~/.Xmodmap
-
 # Color palette used for the terminal ( ~/.extend.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
@@ -395,6 +367,7 @@ set $i3_color17         #0c0c0c
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
+    i3bar_command i3bar -t
 	status_command i3status
 	position bottom
 
@@ -433,7 +406,7 @@ urgent_workspace $base08 $base08 $base07
 }
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+# bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                 border      backgr.     text        indic.      child_border
@@ -542,25 +515,31 @@ mode "$mode_gaps_outer" {
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id compton -b
+#exec --no-startup-id nitrogen --restore;
+# exec --no-startup-id compton -b
 # exec --no-startup-id nitrogen --restore; sleep 1
 #exec --no-startup-id manjaro-hello
-#exec_always --no-startup-id xsetroot -solid "#242424"
+exec_always --no-startup-id xsetroot -solid "#FF2424"
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
+exec --no-startup-id keynav
+exec --no-startup-id emacs
+#exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly"
+#exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly/3lxlwac0rfmx.png_"
+exec_always --no-startup-id feh --no-fehbg --bg-center --recursive --randomize "${HOME}/Pictures/dailyminimal.com" --image-bg "#f1eff0"
 #exec --no-startup-id clipit
 # exec --no-startup-id blueman
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 exec --no-startup-id start_conky_solarized
 # exec --no-startup-id start_conky_green
-#exec --no-startup-id xautolock -time 15 -locker blurlock
+# exec --no-startup-id xautolock -time 15 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+# exec_always --no-startup-id setxkbmap -option caps:ctrl_modifier
 # replace caps lock with ctrl. A life saver!
-#exec_always --no-startup-id setxkbmap -option caps:ctrl_modifier
-#exec_always --no-startup-id "sh -c 'sleep 3; xmodmap ~/.Xmodmap'"
-exec_always --no-startup-id xmodmap ~/.Xmodmap
-#exec_always --no-startup-id setxkbmap -option ctrl:caps
+# exec_always --no-startup-id setxkbmap -option caps:super
+exec_always --no-startup-id sleep 4; xmodmap ~/.Xmodmap
+
+
