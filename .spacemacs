@@ -347,8 +347,8 @@ you should place your code here."
   (setq comint-scroll-to-bottom-on-output t)
   (setq comint-move-point-for-output t)
 
-  ;;I like to have my lines truncated, thank you very much!"
-  (spacemacs/toggle-truncate-lines-on)
+  ;; I like to have my lines truncated, thank you very much!"
+  ;; (spacemacs/toggle-truncate-lines-on)
   ;; I like to move one line per visual line still. Visual line navigation for textual modes
   (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   (scroll-bar-mode -1)
@@ -389,6 +389,9 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(LaTeX-mode-hook
+   (quote
+    (smartparens-mode flyspell-mode evil-matchit-mode turn-on-reftex TeX-PDF-mode TeX-source-correlate-mode LaTeX-math-mode)))
  '(org-agenda-files
    (quote
     ("~/Documents/2018.ss/Epistemology of Machine Learning/paper/paper.org")))
