@@ -63,8 +63,6 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
-     cdlatex
-     auctex
      )
 
    ;; A list of packages that cannot be updated.
@@ -341,6 +339,8 @@ you should place your code here."
   ;;       '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
   ;; (setq org-latex-pdf-process '("latexmk -pvc -pdf -xelatex --shell-escape"))
   ;; (setq org-latex-pdf-process '("latexmk -shell-escape -bibtex -pdf %f"))
+  (setq TeX-view-program-list '(("zathura" "zathura %o")))
+  (setq TeX-view-program-selection '((output-pdf "zathura")))
 
   ;; Autoscroll down after code eval in console process
   (setq comint-scroll-to-bottom-on-input t)
