@@ -1,2 +1,14 @@
-set font monospace normal 12
+set font "monospace normal 12"
 set selection-clipboard clipboard
+
+map <Left> navigate previous 
+map <Right> navigate next 
+map <Button4> navigate previous 
+map <Button5> navigate next
+
+map h navigate previous
+map l navigate next
+map H scroll left
+map L scroll right
+map j scroll down
+map k scroll up
