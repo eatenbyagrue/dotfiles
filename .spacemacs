@@ -337,6 +337,7 @@ you should place your code here."
   (setq helm-bibtex-bibliography '("~/Documents/bibliography/references.bib"))
   ;; Sets Latex highlighting in org mode to on 
   (setq org-highlight-latex-and-related '(latex))
+  (setq LaTeX-item-indent -2 LaTeX-indent-level 4)
   ;; (setq org-latex-pdf-process
   ;;       '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
   ;; (setq org-latex-pdf-process '("latexmk -pvc -pdf -xelatex --shell-escape"))
@@ -348,13 +349,34 @@ you should place your code here."
   (setq comint-scroll-to-bottom-on-input t)
   (setq comint-scroll-to-bottom-on-output t)
   (setq comint-move-point-for-output t)
+  (setq-default evil-escape-key-sequence "fd")
 
   ;; I like to have my lines truncated, thank you very much!"
   ;; (spacemacs/toggle-truncate-lines-on)
   ;; I like to move one line per visual line still. Visual line navigation for textual modes
   (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   (scroll-bar-mode -1)
-  )
+  ;; (add-hook 'LaTeX-mode-hook
+  ;;           'fix-electric-pair-paired-delimiters-in-tex-mode)
+  (add-hook 'latex-mode-hook 'spacemacs/toggle-smartparens-off)
+
+  ;; (defun fix-electric-pair-paired-delimiters-in-tex-mode ()
+  ;;   (add-function
+  ;;    :around
+  ;;    (local 'electric-pair-skip-self)
+  ;;    (lambda (oldfun c)
+  ;;      (pcase (electric-pair-syntax-info c)
+  ;;        (`(,syntax ,_ ,_ ,_)
+  ;;         (if (eq syntax ?$)
+  ;;             (unwind-protect
+  ;;                 (progn
+  ;;                   (delete-char -1)
+  ;;                   (texmathp))
+  ;;               (insert-char c))
+  ;;           (funcall oldfun c))))
+  ;;    '((name . fix-electric-pair-paired-delimiters-in-tex-mode))))
+
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -363,6 +385,11 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(LaTeX-mode-hook
+   (quote
+    (preview-mode-setup turn-on-reftex flyspell-mode evil-matchit-mode TeX-PDF-mode TeX-source-correlate-mode LaTeX-math-mode latex/auto-fill-mode)))
+ '(TeX-electric-math (quote ("\\(" . "\\)")))
+ '(evil-want-Y-yank-to-eol nil)
  '(org-agenda-files
    (quote
     ("~/Documents/2018.ss/Epistemology of Machine Learning/paper/paper.org")))
