@@ -24,6 +24,8 @@
 !.config/
 .config/*
 
+!.config/i3pystatusconf.py
+
 !.config/zathura
 .config/zathura/*
 !.config/zathura/zathurarc
