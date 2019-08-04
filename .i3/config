@@ -217,11 +217,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 assign [class="Emacs"] $ws1
-<<<<<<< HEAD
-assign [class="Firefox"] $ws4
-=======
 assign [class="Firefox"] $ws8
->>>>>>> 503aa75fe6fbe985fa5ab85ce6e5e3fc333f09e5
 assign [class="qutebrowser"] $ws4
 assign [class="Thunderbird"] $ws5
 # assign [class="Spotify"] $ws8
@@ -381,7 +377,7 @@ bar {
 	bindsym button5 nop
   # font xft:URWGothic-Book 11
 	# font pango:monospace 10
-	font pango:DejaVu Sans Mono, FontAwesome 12
+	font pango:DejaVu Sans Mono, FontAwesome 14
 	strip_workspace_numbers yes
 
 	colors {
