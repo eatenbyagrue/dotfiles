@@ -38,8 +38,8 @@ colors() {
 # Set default editing mode to vim mode!
 
 alias 'ctps'='cd ~/Documents/2018.ws/Central\ Topics\ in\ Philosophy\ of\ Science/'
+alias 'gothic'='wine ~/.wine/drive_c/GOG\ Games/Gothic/system/gothic.exe'
 alias 'ma'='cd ~/Documents/2019.MA/thesis/'
-
 # Cycle though history w/o arrow keys
 bind '"\C-p": previous-history'
 bind '"\C-n": next-history'

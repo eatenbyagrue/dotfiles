@@ -16,8 +16,8 @@ new_float normal
 hide_edge_borders none
 
 # change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
+# bindsym $mod+u border none
+# bindsym $mod+y border pixel 1
 # bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -38,6 +38,9 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec --no-startup-id dmenu_recency
 
+bindsym $mod+y exec --no-startup-id ranger
+bindsym $mod+u exec --no-startup-id qutebrowser
+bindsym $mod+i exec --no-startup-id firefox
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
@@ -62,7 +65,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod+o exec "~/.screenlayout/edp1-x240.sh; sleep 3; exec notify-send 'edp1 Only'"
 # bindsym $mod+Shift+o exec "~/.screenlayout/eDP1only.sh; sleep 3; exec notify-send 'eDP1 Only'"
 # bindsym $mod+p exec "~/.screenlayout/HDMIandeDP1.sh; sleep 3; exec notify-send 'HDMI and eDP1'"
-bindsym $mod+p exec "~/.screenlayout/hdmi-edp1-x240.sh; sleep 3; exec notify-send 'HDMI and eDP1'"
+bindsym $mod+p exec "~/.screenlayout/hdmi-x240.sh; sleep 3; exec notify-send 'HDMI Only'"
 bindsym $mod+m move workspace to output up
 
 # Volume Control
@@ -170,7 +173,7 @@ bindsym $mod+Ctrl+Left workspace prev
 
 # terminal workspace
 set $ws1 "1:1: "
-set $ws2 "2:2: ²"
+set $ws2 "2:2: "
 # pdf workspace
 set $ws3 "3:3: "
 # firefox workspace
@@ -179,7 +182,7 @@ set $ws4 "4:4: "
 # mail workspace
 set $ws5 "5:5: "
 set $ws6 6
-set $ws7 7
+set $ws7 "7:7: "
 set $ws8 "8:8: " 
 
 # switch to workspace
@@ -222,7 +225,7 @@ assign [class="qutebrowser"] $ws4
 assign [class="Thunderbird"] $ws5
 # assign [class="Spotify"] $ws8
 # Workaround for Spotify
-for_window [class="Spotify"] move to workspace $ws8
+for_window [class="Spotify"] move to workspace $ws7
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Calamares"] floating enable border normal
@@ -531,7 +534,8 @@ exec --no-startup-id keynav
 exec --no-startup-id emacs --daemon 
 #exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly"
 #exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly/3lxlwac0rfmx.png_"
-exec_always --no-startup-id feh --no-fehbg --bg-center --recursive --randomize "${HOME}/Pictures/dailyminimal.com" --image-bg "#f1eff0"
+# exec_always --no-startup-id feh --no-fehbg --bg-center --recursive --randomize "${HOME}/Pictures/dailyminimal.com" --image-bg "#f1eff0"
+exec_always --no-startup-id feh --no-fehbg --bg-center "${HOME}/Pictures/dailyminimal.com/FAVtumblr_nvg4fkuSry1u16n75o1_1280.jpg" --image-bg "#f1eff0"
 #exec --no-startup-id clipit
 # exec --no-startup-id blueman
 # exec_always --no-startup-id sbxkb
