@@ -65,7 +65,8 @@ bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod+o exec "~/.screenlayout/edp1-x240.sh; sleep 3; exec notify-send 'edp1 Only'"
 # bindsym $mod+Shift+o exec "~/.screenlayout/eDP1only.sh; sleep 3; exec notify-send 'eDP1 Only'"
 # bindsym $mod+p exec "~/.screenlayout/HDMIandeDP1.sh; sleep 3; exec notify-send 'HDMI and eDP1'"
-bindsym $mod+p exec "~/.screenlayout/hdmi-x240.sh; sleep 3; exec notify-send 'HDMI Only'"
+# bindsym $mod+p exec "~/.screenlayout/hdmi-x240.sh; sleep 3; exec notify-send 'HDMI Only'"
+bindsym $mod+p exec "~/.screenlayout/dp1-x240.sh; sleep 3; exec notify-send 'DP1 Only'"
 bindsym $mod+m move workspace to output up
 
 # Volume Control

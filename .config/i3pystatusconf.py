@@ -1,138 +1,74 @@
 from i3pystatus import Status
+import socket
 
 status = Status()
 
-# Displays clock like this:
-# Tue 30 Jul 11:59:46 PM KW31
-#                          ^-- calendar week
-# status.register("clock",
-#     format="%a %-d %b %X KW%V",)
-
 status.register("clock",
                 format=" %a %-d %b %X",)
-# Shows the average load of the last minute and the last 5 minutes
-# (the default value for format is used)
-# status.register("load")
 
-# Shows disk usage of /
-# Format:
-# 42/128G [86G]
-# status.register("disk",
-#     path="/",
-#     format="{used}/{total}G [{avail}G]",)
 status.register("disk",
     path="/",
     format="  {avail:1.0f}GB ",)
 
-
-# The battery monitor has many formatting options, see README for details
-
-# This would look like this, when discharging (or charging)
-# ↓14.22W 56.15% [77.81%] 2h:41m
-# And like this if full:
-# =14.22W 100.0% [91.21%]
-#
-# This would also display a desktop notification (via D-Bus) if the percentage
-# goes below 5 percent while discharging. The block will also color RED.
-# If you don't have a desktop notification demon yet, take a look at dunst:
-#   http://www.knopwob.org/dunst/
-
-status.register("battery",
-    # format="{status}/{consumption:.2f}W {percentage:.2f}% [{percentage_design:.2f}%] {remaining:%E%hh:%Mm}",
-    # alert=True,
-    # alert_percentage=5,
-                format=" BAT0 {glyph}{status}{percentage:1.0f}% ",
-                glyphs="",
-                charging_color="#ffff00",
-                full_color="#00ff00",
-                battery_ident = "BAT0",
-    status={
-         "DIS": "↓",
-         "CHR": "",
-         "FULL": "",
-     },
-)
-status.register("battery",
-    # format="{status}/{consumption:.2f}W {percentage:.2f}% [{percentage_design:.2f}%] {remaining:%E%hh:%Mm}",
-    # alert=True,
-    # alert_percentage=5,
-                format=" BAT1 {glyph}{status}{percentage:1.0f}% ",
-                glyphs="",
-                charging_color="#ffff00",
-                full_color="#00ff00",
-                battery_ident = "BAT1",
-    status={
-         "DIS": "↓",
-         "CHR": "",
-         # "FULL": "",
-         "FULL": "",
-     },
-)
-
-# This would look like this:
-# Discharging 6h:51m
-# status.register("battery",
-    # format="{status} {remaining:%E%hh:%Mm}",
-    # alert=True,
-    # alert_percentage=5,
-    # status={
-    #     "DIS":  "Discharging",
-    #     "CHR":  "Charging",
-    #     "FULL": "Bat full",
-    # },
-# )
-# Shows your CPU temperature, if you have a Intel CPU
-status.register("temp",
-    format="  {temp:.0f}°C ",)
-
-# Shows CPU Usage
 status.register("cpu_usage",
                 format="  {usage}% ")
 
 
-# Displays whether a DHCP client is running
-# status.register("runwatch",
-#     name="DHCP",
-#     path="/var/run/dhclient*.pid",)
+# Run different commands based on host
+if "x240" in socket.gethostname():
 
-# Shows the address and up/down state of eth0. If it is up the address is shown in
-# green (the default value of color_up) and the CIDR-address is shown
-# (i.e. 10.10.10.42/24).
-# If it's down just the interface name (eth0) will be displayed in red
-# (defaults of format_down and color_down)
-#
-# Note: the network module requires PyPI package netifaces
-# status.register("network",
-#     interface="enp0s25",
-#     format_up="{v4cidr}",)
-
-# Note: requires both netifaces and basiciw (for essid and quality)
-status.register("network",
-                interface="wlp3s0",
-                # auto_units=True,
-                # graph_width=3,
-                format_up="↓{bytes_recv}KB/s {essid}",
-)
-
-# status.register("net_speed",
-#     format = "↓{speed_down:.1f}{down_units}↑{speed_up:.1f}{up_units} ({hosting_provider})")
+    status.register("temp",
+                format="  {temp:.0f}°C ",)
 
 
-# Shows pulseaudio default sink volume
-#
-# Note: requires libpulseaudio from PyPI
-# status.register("pulseaudio",
-#     format="♪{volume}",)
+    status.register("battery",
+                    format=" BAT0 {glyph}{status}{percentage:1.0f}% ",
+                    glyphs="",
+                    charging_color="#ffff00",
+                    full_color="#00ff00",
+                    battery_ident = "BAT0",
+                    status={
+                        "DIS": "↓",
+                        "CHR": "",
+                        "FULL": "",
+                    },
+    )
+    status.register("battery",
+                    format=" BAT1 {glyph}{status}{percentage:1.0f}% ",
+                    glyphs="",
+                    charging_color="#ffff00",
+                    full_color="#00ff00",
+                    battery_ident = "BAT1",
+                    status={
+                        "DIS": "↓",
+                        "CHR": "",
+                        # "FULL": "",
+            "FULL": "",
+                    },
+    )
 
-# Shows mpd status
-# Format:
-# Cloud connected▶Reroute to Remain
-# status.register("mpd",
-#     format="{title}{status}{album}",
-#     status={
-#         "pause": "▷",
-#         "play": "▶",
-#         "stop": "◾",
-#     },)
+    status.register("network",
+                    interface="wlp3s0",
+                    format_up="↓{bytes_recv}KB/s {essid}",
+    )
 
+elif "pc" in socket.gethostname():
+
+    status.register("temp",
+                lm_sensors_enabled=True,
+                # format="  {temp:.0f}°C ",
+    format="  {Package_id_0}°C ",)
+
+    # status.register("gpu_temp",
+    #                 format="GPU {temp}°C")
+
+    status.register("network",
+                    interface="wlp0s20u12",
+                    format_up="↓{bytes_recv}KB/s {essid}",
+    )
+
+status.register("pomodoro",
+                break_duration=420,
+                sound='/home/gilbert/Audio/kirchenglocke.wav')
 status.run()
+
