@@ -223,6 +223,7 @@ assign [class="Emacs"] $ws1
 assign [class="Firefox"] $ws8
 assign [class="qutebrowser"] $ws4
 assign [class="Thunderbird"] $ws5
+assign [class="discord"] $ws6
 # assign [class="Spotify"] $ws8
 # Workaround for Spotify
 for_window [class="Spotify"] move to workspace $ws7
@@ -535,7 +536,8 @@ exec --no-startup-id emacs --daemon
 #exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly"
 #exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly/3lxlwac0rfmx.png_"
 # exec_always --no-startup-id feh --no-fehbg --bg-center --recursive --randomize "${HOME}/Pictures/dailyminimal.com" --image-bg "#f1eff0"
-exec_always --no-startup-id feh --no-fehbg --bg-center "${HOME}/Pictures/dailyminimal.com/FAVtumblr_nvg4fkuSry1u16n75o1_1280.jpg" --image-bg "#f1eff0"
+# exec_always --no-startup-id feh --no-fehbg --bg-center "${HOME}/Pictures/dailyminimal.com/FAVtumblr_nvg4fkuSry1u16n75o1_1280.jpg" --image-bg "#f1eff0"
+exec_always --no-startup-id feh --no-fehbg --bg-center "${HOME}/Pictures/dailyminimal.com/FAVtumblr_p0lpa1mfMB1u16n75o1_12802.jpg" --image-bg "#161616"
 #exec --no-startup-id clipit
 # exec --no-startup-id blueman
 # exec_always --no-startup-id sbxkb

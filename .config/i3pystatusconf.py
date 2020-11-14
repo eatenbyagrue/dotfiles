@@ -61,9 +61,13 @@ elif "pc" in socket.gethostname():
     # status.register("gpu_temp",
     #                 format="GPU {temp}°C")
 
+    # status.register("network",
+    #                 interface="wlp0s20u12",
+    #                 format_up="↓{bytes_recv}KB/s {essid}",
+    # )
     status.register("network",
-                    interface="wlp0s20u12",
-                    format_up="↓{bytes_recv}KB/s {essid}",
+                    interface="eno1",
+                    format_up="{interface} ↓{bytes_recv}KB/s",
     )
 
 status.run()

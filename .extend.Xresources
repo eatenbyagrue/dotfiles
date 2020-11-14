@@ -1,4 +1,4 @@
-URxvt.font:                       xft:DejaVu Sans Mono:size=11
+URxvt.font:                       xft:DejaVu Sans Mono:size=14
 URxvt.scrollBar:                  false
 URxvt.cursorBlink:                true
 URxvt.letterSpace:                -1.8
