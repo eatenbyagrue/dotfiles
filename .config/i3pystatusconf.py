@@ -4,7 +4,7 @@ import socket
 status = Status()
 
 status.register("clock",
-                format=" %a %-d %b %X",)
+                format=" KW %V, %a %-d %b %X",)
 
 status.register("disk",
     path="/",
@@ -70,5 +70,7 @@ elif "pc" in socket.gethostname():
 status.register("pomodoro",
                 break_duration=420,
                 sound='/home/gilbert/Audio/kirchenglocke.wav')
+status.register("spotify",
+                format="{artist}: {title} {status}")
 status.run()
 
