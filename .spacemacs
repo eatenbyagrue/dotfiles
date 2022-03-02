@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(html
+   '(python
+     html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -515,6 +516,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
   (require 'org-inlinetask)
   (setq reftex-default-bibliography '("~/Documents/2022.PhD/bibliography/references.bib"))
   (setq org-ref-default-bibliography '("~/Documents/2022.PhD/bibliography/references.bib")

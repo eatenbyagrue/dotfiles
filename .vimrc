@@ -1,31 +1,5 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" " set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
-
-" " let Vundle manage Vundle, required
-" " Plugin 'VundleVim/Vundle.vim'
-
-" " The following are examples of different formats supported.
-" " Keep Plugin commands between vundle#begin/end.
-" " plugin on GitHub repo
-" " Plugin 'tpope/vim-fugitive'
-" " plugin from http://vim-scripts.org/vim/scripts.html
-" " Plugin 'L9'
-" " Git plugin not hosted on GitHub
-" " Plugin 'git://git.wincent.com/command-t.git'
-" " git repos on your local machine (i.e. when working on your own plugin)
-" " Plugin 'file:///home/gmarik/path/to/plugin'
-" " The sparkup vim script is in a subdirectory of this repo called vim.
-" " Pass the path to set the runtimepath properly.
-" " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" " Install L9 and avoid a Naming conflict if you've already installed a
-" " different version somewhere else.
-" " Plugin 'ascenator/L9', {'name': 'newL9'}
+set nocompatible
+filetype off
 
 " Plugin 'scrooloose/nerdcommenter'
 " Plugin 'vim-python/python-syntax'
@@ -82,9 +56,12 @@ set laststatus=2
 set undofile
 
 "Remap Leader Key
-let mapleader = ","
+"let mapleader = ","
+" map leader to Space
+let mapleader = " "
 "Remap Esc woohoo
-inoremap jj <Esc>
+inoremap kj <Esc>
+inoremap df <Esc>
 "Remap C-e to jump at end of line in insert mode
 inoremap <C-e> <C-o>A
 "Fix search an replace
@@ -102,15 +79,14 @@ vnoremap <tab> %
 
 "Long Line Handling
 set wrap
-set textwidth=79
+set textwidth=99
 set formatoptions=qrn1
-set colorcolumn=80
+" set colorcolumn=80
 
 "Show Whitespace characters
 "set list
 "set listchars=tab:▸\ ,eol:¬
 set number
-syntax enable
 set clipboard=unnamed
 
 "Learn vim the hard way
@@ -129,17 +105,11 @@ nnoremap k gk
 nnoremap ; :
 
 "Strip all trailing whitespace in current file!
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+"nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-noremap <Leader>s :update<CR>
-"Close the syntax error window
-noremap <Leader>d :SyntasticReset<CR>
 map <C-p> :w<CR>:!python %<CR>
 
 let g:python_highlight_all = 1
-
-set background=dark
-" colorscheme hybrid
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" SYNTASTIC
@@ -152,3 +122,37 @@ set background=dark
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
+
+call plug#begin()
+Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'morhetz/gruvbox'
+Plug 'pseewald/vim-anyfold'
+Plug 'tpope/vim-surround'
+call plug#end()
+
+syntax enable
+set background=dark
+colorscheme gruvbox
+
+map <C-o> :NERDTreeToggle<CR>
+" remap to close the current buffer, but not vim
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+map <leader>s :w<CR>
+map <leader>rc :source ~/.vimrc<CR>
+" This calls fzf
+map <leader>f :Files<CR>
+" next buffer (cycles through open buffers)
+map <leader><tab> :bn<CR>
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black', 'isort'],
+\}
+
+let g:ale_fix_on_save = 1
