@@ -50,26 +50,34 @@ if "x240" in socket.gethostname():
     status.register("network",
                     interface="wlp3s0",
                     format_up="↓{bytes_recv}KB/s {essid}",
-    )
+                    )
 
 elif "pc" in socket.gethostname():
 
-    status.register("temp",
-                lm_sensors_enabled=True,
-                # format="  {temp:.0f}°C ",
-    format="  {Package_id_0}°C ",)
 
-    # status.register("gpu_temp",
-    #                 format="GPU {temp}°C")
+    status.register("gpu_temp",
+                    format=" {temp}°C ")
 
+    status.register("gpu_usage",
+                    format=" GPU {usage}% ")
+
+    # status.register("temp",
+    #                 lm_sensors_enabled=True,
+    #                 format=" {Package_id_0}°C ",)
+    status.register("cpu_usage",
+                format=" CPU {usage}% ")
+
+    # status.register("network",
+    #                 interface="wlp0s20u12",
+    #                 format_up="↓{bytes_recv}KB/s {essid}",
+    # )
     status.register("network",
-                    interface="wlp0s20u12",
-                    format_up="↓{bytes_recv}KB/s {essid}",
+                    interface="enp6s0",
+                    divisor=1024**2,
+                    # format_up="{interface} ↓{bytes_recv}KB/s",
+                    format_up="{interface} ↓{bytes_recv}MB/s ",
     )
 
-status.register("pomodoro",
-                break_duration=420,
-                sound='/home/gilbert/Audio/kirchenglocke.wav')
 status.register("spotify",
                 format="{artist}: {title} {status}")
 status.run()
