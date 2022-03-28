@@ -62,7 +62,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 
 # Screen Control
 # bindsym $mod+o exec "~/.screenlayout/HDMIonly.sh; sleep 3; exec notify-send 'HDMI Only'"
-bindsym $mod+o exec "~/.screenlayout/dp-only.sh; sleep 3; exec notify-send 'dp only'"
+bindsym $mod+o exec "~/.screenlayout/hdmi-only.sh; sleep 3; exec notify-send 'dp only'"
 
 # bindsym $mod+Shift+o exec "~/.screenlayout/eDP1only.sh; sleep 3; exec notify-send 'eDP1 Only'"
 # bindsym $mod+p exec "~/.screenlayout/HDMIandeDP1.sh; sleep 3; exec notify-send 'HDMI and eDP1'"
@@ -175,16 +175,15 @@ bindsym $mod+Ctrl+Left workspace prev
 # terminal workspace
 set $ws1 "1:1: "
 set $ws2 "2:2: "
-# pdf workspace
-set $ws3 "3:3: "
+set $ws3 "3:3: "
 # firefox workspace
 # set $ws3 "3:3: "
 set $ws4 "4:4: "
 # mail workspace
-set $ws5 "5:5: "
+set $ws5 "5:5: "
 set $ws6 6
 set $ws7 "7:7: "
-set $ws8 "8:8: "
+set $ws8 "8:8: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -371,17 +370,15 @@ bar {
   # i3bar_command i3bar
 
 	# status_command i3status
-  status_command python ~/.config/i3pystatusconf.py
+    status_command python ~/.config/i3pystatusconf.py
 	position bottom
 
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 	tray_output primary
+    output primary
 #	tray_output eDP1
 
 	bindsym button4 nop
 	bindsym button5 nop
-  # font xft:URWGothic-Book 11
-	# font pango:monospace 10
 	font pango:DejaVu Sans Mono, FontAwesome 14
 	strip_workspace_numbers yes
 
@@ -405,9 +402,35 @@ bar {
 		active_workspace $base02 $base02 $base07
 
 		inactive_workspace $base01 $base01 $base03
-urgent_workspace $base08 $base08 $base07
+        urgent_workspace $base08 $base08 $base07
     }
+}
 
+bar{
+    output nonprimary
+	tray_output primary
+	font pango:DejaVu Sans Mono, FontAwesome 14
+	strip_workspace_numbers yes
+    colors {
+        background $i3_background
+        statusline $i3_text
+        separator  $i3_separator
+
+        focused_workspace   $i3_color1  $i3_color4  $i3_text
+        active_workspace    $i3_color2  $i3_color3  $i3_color5
+        inactive_workspace  $i3_color2  $i3_color3  $i3_color6
+        urgent_workspace    $i3_color4  $i3_color5  $i3_color7
+		separator $base03
+		background $base01
+		statusline $base05
+
+		focused_workspace $base0C $base0D $base00
+		# focused_workspace $base2D $base2D $base01
+		active_workspace $base02 $base02 $base07
+
+		inactive_workspace $base01 $base01 $base03
+        urgent_workspace $base08 $base08 $base07
+    }
 }
 
 # hide/unhide i3status bar
