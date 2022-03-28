@@ -518,18 +518,21 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   (require 'org-inlinetask)
-  (setq reftex-default-bibliography '("~/Documents/2022.PhD/bibliography/references.bib"))
-  (setq org-ref-default-bibliography '("~/Documents/2022.PhD/bibliography/references.bib")
-        org-ref-pdf-directory "~/Documents/papers/"
-        org-ref-bibliography-notes "~/Documents/2022.PhD/bibliography/notes.org")
-  (setq bibtex-completion-bibliography '("~/Documents/2022.PhD/bibliography/references.bib")
-        bibtex-completion-library-path '("~/Documents/papers/"))
-  (setq helm-bibtex-bibliography '("~/Documents/2022.PhD/bibliography/references.bib"))
+  (setq reftex-default-bibliography '("~/documents/2022.PhD/bibliography/references.bib"))
+  (setq org-ref-default-bibliography '("~/documents/2022.PhD/bibliography/references.bib")
+        org-ref-pdf-directory "~/documents/papers/"
+        org-ref-bibliography-notes "~/documents/2022.PhD/bibliography/notes.org")
+  (setq bibtex-completion-bibliography '("~/documents/2022.PhD/bibliography/references.bib")
+        bibtex-completion-library-path '("~/documents/papers/"))
+  (setq helm-bibtex-bibliography '("~/documents/2022.PhD/bibliography/references.bib"))
   ;; Sets Latex highlighting in org mode to on 
   (setq org-highlight-latex-and-related '(latex))
   (setq LaTeX-item-indent -2 LaTeX-indent-level 4)
+  (setq org-latex-pdf-process '("latexmk -pdf -outdir=%o %f"))
   ;; (setq org-latex-pdf-process
   ;;       '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
+  ;; (setq org-latex-pdf-process (list
+  ;;                              "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
   ;; (setq org-latex-pdf-process '("latexmk -pvc -pdf -xelatex --shell-escape"))
   ;; (setq org-latex-pdf-process '("latexmk -shell-escape -bibtex -pdf %f"))
   (setq TeX-view-program-list '(("zathura" "zathura %o")))
@@ -539,7 +542,7 @@ before packages are loaded."
   (setq comint-scroll-to-bottom-on-input t)
   (setq comint-scroll-to-bottom-on-output t)
   (setq comint-move-point-for-output t)
-  (setq-default evil-escape-key-sequence "fd")
+  (setq-default evil-escape-key-sequence "df")
 
   ;; (spacemacs/toggle-truncate-lines-on)
   ;; I like to move one line per visual line still. Visual line navigation for textual modes
@@ -573,7 +576,13 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
- '(org-agenda-files '("~/Documents/2022.PhD/arbeitszeiten.org"))
+ '(org-agenda-files '("~/documents/2022.PhD/arbeitszeiten.org"))
+ '(org-file-apps
+   '((auto-mode . emacs)
+     (directory . emacs)
+     ("\\.mm\\'" . default)
+     ("\\.x?html?\\'" . "/usr/bin/qutebrowser %s")
+     ("\\.pdf\\'" . default)))
  '(package-selected-packages
    '(org-rich-yank org-ref pdf-tools key-chord ivy tablist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-cliplink org-brain malyon htmlize helm-org-rifle helm-bibtex bibtex-completion biblio parsebib biblio-core gnuplot flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip evil-org auto-dictionary auctex-latexmk auctex ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org symon symbol-overlay string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless move-text macrostep lorem-ipsum link-hint indent-guide hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav editorconfig dumb-jump dotenv-mode diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line)))
 (custom-set-faces
