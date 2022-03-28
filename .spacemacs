@@ -32,8 +32,14 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(python
+   '(
+     javascript
+     vimscript
+     markdown
+     haskell
      html
+     python
+     octave
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -236,7 +242,7 @@ It should only modify the values of Spacemacs settings."
    ;;                             :width normal)
 
    dotspacemacs-default-font '("DejaVu Sans Mono"
-                               :size 18 
+                               :size 18
                                :weight normal
                                :width normal)
 
@@ -525,7 +531,7 @@ before packages are loaded."
   (setq bibtex-completion-bibliography '("~/documents/2022.PhD/bibliography/references.bib")
         bibtex-completion-library-path '("~/documents/papers/"))
   (setq helm-bibtex-bibliography '("~/documents/2022.PhD/bibliography/references.bib"))
-  ;; Sets Latex highlighting in org mode to on 
+  ;; Sets Latex highlighting in org mode to on
   (setq org-highlight-latex-and-related '(latex))
   (setq LaTeX-item-indent -2 LaTeX-indent-level 4)
   (setq org-latex-pdf-process '("latexmk -pdf -outdir=%o %f"))
@@ -592,3 +598,19 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  )
 )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(TeX-electric-math nil)
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   '(bibtex-completion web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc coffee-mode helm avy helm-core popup async yapfify ws-butler winum which-key web-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toc-org tagedit spaceline powerline slim-mode scss-mode sass-mode restart-emacs request rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el paradox spinner org-ref pdf-tools key-chord ivy tablist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-plus-contrib org-mime org-download org-bullets open-junk-file neotree move-text mmm-mode markdown-toc markdown-mode macrostep lorem-ipsum live-py-mode linum-relative link-hint intero indent-guide hydra lv hy-mode dash-functional hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile projectile helm-mode-manager helm-make helm-hoogle helm-flx helm-descbinds helm-css-scss helm-bibtex parsebib helm-ag haskell-snippets yasnippet haml-mode google-translate golden-ratio gnuplot gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck-haskell flycheck pkg-info epl flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu emmet-mode elisp-slime-nav dumb-jump diminish define-word dactyl-mode cython-mode company-ghci company-ghc ghc company haskell-mode column-enforce-mode cmm-mode clean-aindent-mode bind-map bind-key biblio biblio-core auto-highlight-symbol auto-dictionary auto-compile packed auctex-latexmk auctex anaconda-mode pythonic f dash s aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-level-1 ((t (:inherit nil :foreground "#4f97d7" :height 1.2))))
+ '(org-level-2 ((t (:inherit bold :foreground "#2d9574" :height 1.1)))))

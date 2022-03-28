@@ -4,11 +4,14 @@ import socket
 status = Status()
 
 status.register("clock",
-                format=" %a %-d %b %X",)
+                format=" KW %V, %a %-d %b %X",)
 
 status.register("disk",
     path="/",
     format="  {avail:1.0f}GB ",)
+
+status.register("cpu_usage",
+                format="  {usage}% ")
 
 
 # Run different commands based on host
@@ -17,8 +20,6 @@ if "x240" in socket.gethostname():
     status.register("temp",
                 format="  {temp:.0f}°C ",)
 
-    status.register("cpu_usage",
-                format="CPU {usage}% ")
 
     status.register("battery",
                     format=" BAT0 {glyph}{status}{percentage:1.0f}% ",
@@ -49,7 +50,7 @@ if "x240" in socket.gethostname():
     status.register("network",
                     interface="wlp3s0",
                     format_up="↓{bytes_recv}KB/s {essid}",
-    )
+                    )
 
 elif "pc" in socket.gethostname():
 
@@ -77,4 +78,7 @@ elif "pc" in socket.gethostname():
                     format_up="{interface} ↓{bytes_recv}MB/s ",
     )
 
+status.register("spotify",
+                format="{artist}: {title} {status}")
 status.run()
+
