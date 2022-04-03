@@ -87,7 +87,7 @@ set formatoptions=qrn1
 "set list
 "set listchars=tab:▸\ ,eol:¬
 set number
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 "Learn vim the hard way
 nnoremap <up> <nop>
