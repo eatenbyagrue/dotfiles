@@ -17,6 +17,10 @@
 .i3/*
 !.i3/config
 
+!.doom.d/
+.doom.d/*
+!.doom.d/*.el
+
 !.Xresources-Themes/
 .Xresources-Themes/*
 !.Xresources-Themes/FrontEndDelight
@@ -37,4 +41,3 @@
 !.config/feh
 .config/feh/*
 !.config/feh/keys
-
