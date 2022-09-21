@@ -68,12 +68,10 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # bindsym $mod+p exec "~/.screenlayout/dp1-x240.sh; sleep 3; exec notify-send 'DP1 Only'"
 # bindsym $mod+p exec "~/.screenlayout/hdmi-dp-x240.sh; sleep 3; exec notify-send 'Two Monitors HDMI and VGA'"
 
-bindsym $mod+p exec "~/.screenlayout/edp1-dp2-1-x240.sh sleep 3; exec notify-send 'edp1 and dp2-1'"
-bindsym $mod+Shift+p exec "~/.screenlayout/edp1-dp2-1-dp2-2-x240.sh sleep 3; exec notify-send 'epd1 and dp2-1 and dp2-2'"
-bindsym $mod+Shift+o exec "~/.screenlayout/dp2-1-dp2-2-x240.sh; sleep 3; exec notify-send 'dp2-1 and dp2-2'"
-bindsym $mod+m move workspace to output up
+bindsym $mod+o exec "~/.screenlayout/one-monitor.sh; sleep 3; exec notify-send 'One monitor'"
+bindsym $mod+p exec "~/.screenlayout/two-monitors.sh sleep 3; exec notify-send 'Two monitors'"
+bindsym $mod+m move workspace to output left
 # bindsym $mod+o exec "~/.screenlayout/HDMIonly.sh; sleep 3; exec notify-send 'HDMI Only'"
-bindsym $mod+o exec "~/.screenlayout/hdmi-only.sh; sleep 3; exec notify-send 'dp only'"
 
 # bindsym $mod+Shift+o exec "~/.screenlayout/eDP1only.sh; sleep 3; exec notify-send 'eDP1 Only'"
 # bindsym $mod+p exec "~/.screenlayout/HDMIandeDP1.sh; sleep 3; exec notify-send 'HDMI and eDP1'"
@@ -560,7 +558,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id xsetroot -solid "#FF2424"
 # Changes the screen temperature depending on the setting
 # Less strain on the eyes! (maybe)
-exec --no-startup-id redshift -O 4500K -P
+exec --no-startup-id redshift
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -568,7 +566,7 @@ exec_always --no-startup-id keynav
 exec --no-startup-id emacs --daemon
 #exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly"
 #exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly/3lxlwac0rfmx.png_"
-# exec_always --no-startup-id feh --no-fehbg --bg-center --recursive --randomize "${HOME}/Pictures/dailyminimal.com" --image-bg "#f1eff0"
+exec_always --no-startup-id feh --no-fehbg --bg-center --recursive --randomize "${HOME}/Pictures/dailyminimal.com" --image-bg "#f1eff0"
 exec --no-startup-id keynav
 exec --no-startup-id emacs --daemon
 #exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly"
