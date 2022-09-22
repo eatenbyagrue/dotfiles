@@ -41,3 +41,7 @@
 !.config/feh
 .config/feh/*
 !.config/feh/keys
+
+!.config/nvim   
+.config/nvim/*
+!.config/nvim/init.vim
