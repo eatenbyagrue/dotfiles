@@ -69,7 +69,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # bindsym $mod+p exec "~/.screenlayout/hdmi-dp-x240.sh; sleep 3; exec notify-send 'Two Monitors HDMI and VGA'"
 
 bindsym $mod+o exec "~/.screenlayout/edp1-x240.sh; sleep 3; exec notify-send 'edp1 Only'"
-bindsym $mod+p exec "~/.screenlayout/dp1-x240.sh sleep 3; exec notify-send 'edp1 and dp2-1'"
+bindsym $mod+p exec "~/.screenlayout/edp1-and-external.sh sleep 3; exec notify-send 'edp1 and external'"
 bindsym $mod+Shift+p exec "~/.screenlayout/edp1-dp2-1-dp2-2-x240.sh sleep 3; exec notify-send 'epd1 and dp2-1 and dp2-2'"
 bindsym $mod+Shift+o exec "~/.screenlayout/dp2-1-dp2-2-x240.sh; sleep 3; exec notify-send 'dp2-1 and dp2-2'"
 bindsym $mod+m move workspace to output up
