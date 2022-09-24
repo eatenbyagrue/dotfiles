@@ -8,14 +8,12 @@ call plug#begin(stdpath('data') . '/plugged')
 "   - Avoid using standard Vim directory names like 'plugin'
     Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline'
-    Plug 'ludovicchabant/vim-gutentags'
     Plug 'dense-analysis/ale'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-"colorscheme gruvbox
+colorscheme gruvbox
 
 "Everything 4 spaces!
 set tabstop=4
@@ -29,7 +27,7 @@ let mapleader = " "
 " remap to close the current buffer, but not vim
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 map <leader>s :w<CR>
-map <leader>rc :source ~/.vimrc<CR>
+map <leader>rc :source ~/.config/nvim/init.vim<CR>
 " This calls fzf
 map <leader>f :Files<CR>
 " next buffer (cycles through open buffers)
