@@ -27,14 +27,15 @@ set expandtab
 map <C-o> :NERDTreeToggle<CR>
 imap kj <ESC>
 imap df <ESC>
-map <leader>ww <C-w><C-w>
-map <leader>vv <C-w><C-v>
 
 autocmd FileType python map <buffer> <C-p> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <C-p> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 let mapleader = " "
 " remap to close the current buffer, but not vim
+map <leader>ww <C-w><C-w>
+map <leader>vv <C-w><C-v>
+
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 map <leader>s :w<CR>
 map <leader>rc :source ~/.config/nvim/init.vim<CR>

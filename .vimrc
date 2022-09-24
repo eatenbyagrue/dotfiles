@@ -123,36 +123,36 @@ let g:python_highlight_all = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 
-call plug#begin()
-Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdtree'
-Plug 'preservim/nerdcommenter'
-Plug 'dense-analysis/ale'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'tomtom/tcomment_vim'
-Plug 'morhetz/gruvbox'
-Plug 'pseewald/vim-anyfold'
-Plug 'tpope/vim-surround'
-call plug#end()
-
-syntax enable
-set background=dark
-colorscheme gruvbox
-
-map <C-o> :NERDTreeToggle<CR>
-" remap to close the current buffer, but not vim
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
-map <leader>s :w<CR>
-map <leader>rc :source ~/.vimrc<CR>
-" This calls fzf
-map <leader>f :Files<CR>
-" next buffer (cycles through open buffers)
-map <leader><tab> :bn<CR>
-
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black', 'isort'],
-\}
-
-let g:ale_fix_on_save = 1
+" call plug#begin()
+" Plug 'itchyny/lightline.vim'
+" Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdcommenter'
+" Plug 'dense-analysis/ale'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" Plug 'tomtom/tcomment_vim'
+" Plug 'morhetz/gruvbox'
+" Plug 'pseewald/vim-anyfold'
+" Plug 'tpope/vim-surround'
+" call plug#end()
+"
+" syntax enable
+" set background=dark
+" colorscheme gruvbox
+"
+" map <C-o> :NERDTreeToggle<CR>
+" " remap to close the current buffer, but not vim
+" map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+" map <leader>s :w<CR>
+" map <leader>rc :source ~/.vimrc<CR>
+" " This calls fzf
+" map <leader>f :Files<CR>
+" " next buffer (cycles through open buffers)
+" map <leader><tab> :bn<CR>
+"
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'python': ['black', 'isort'],
+" \}
+"
+" let g:ale_fix_on_save = 1
