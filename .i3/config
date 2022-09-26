@@ -74,6 +74,7 @@ bindsym $mod+m move workspace to output left
 bindsym $mod+Shift+o exec "~/.screenlayout/edp1-x240.sh; sleep 3; exec notify-send 'edp1-x240'"
 bindsym $mod+Shift+p exec "~/.screenlayout/dp2-1-x240.sh; sleep 3; exec notify-send 'dp2-1-x240'"
 bindsym $mod+Shift+[ exec "~/.screenlayout/dp2-1-dp2-2-x240.sh; sleep 3; exec notify-send 'dp2-1-dp2-2-x240'"
+bindsym $mod+Shift+] exec "~/.screenlayout/dp2-2-dp2-1-x240.sh; sleep 3; exec notify-send 'dp2-1-dp2-2-x240'"
 # bindsym $mod+p exec "~/.screenlayout/HDMIandeDP1.sh; sleep 3; exec notify-send 'HDMI and eDP1'"
 
 # Volume Control
