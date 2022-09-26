@@ -41,6 +41,7 @@ alias 'ctps'='cd ~/Documents/2018.ws/Central\ Topics\ in\ Philosophy\ of\ Scienc
 alias 'gothic'='wine ~/.wine/drive_c/GOG\ Games/Gothic/system/gothic.exe'
 alias 'ma'='cd ~/Documents/2019.MA/thesis/'
 alias 'course'='cd ~/Documents/2022.PhD/machine-learning-exercises/coursera-ml/'
+alias 'v'='nvim'
 
 # Cycle though history w/o arrow keys
 bind '"\C-p": previous-history'
