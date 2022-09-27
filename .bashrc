@@ -38,7 +38,7 @@ colors() {
 # Set default editing mode to vim mode!
 
 alias 'v'='nvim'
-alias 'kag'='~/documents/2022.PhD/machine-learning-exercises/kaggle/'
+alias 'kag'='cd ~/documents/2022.PhD/machine-learning-exercises/kaggle/'
 
 # Cycle though history w/o arrow keys
 bind '"\C-p": previous-history'
