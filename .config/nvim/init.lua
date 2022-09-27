@@ -31,8 +31,8 @@ o.number = true
 imap("df", "<ESC>")
 nmap("<leader>ww", "<C-w><C-w>")
 nmap("<leader>s", ":w<CR>")
-nmap("<leader>rc", ":source ~/.config/nvim/init.vim<CR>")
-nmap("<leader>rf", ":e ~/.config/nvim/init.vim<CR>")
+nmap("<leader>rc", ":luafile ~/.config/nvim/init.lua<CR>")
+nmap("<leader>rf", ":e ~/.config/nvim/init.lua<CR>")
 nmap("<leader>q", ":q<CR>")
 nmap("<leader><tab>", ":bn<CR>")
 nmap("<leader>f", ":w <CR><bar>:!black %<CR>")
@@ -46,7 +46,7 @@ vim.cmd("set completeopt=menu,menuone,noselect")
 
 vim.cmd("colorscheme gruvbox")
  
-vim.cmd("autocmd FileType python map <buffer> <leader>f :w<CR><bar>:!black %<CR>")
+vim.cmd("autocmd FileType python map <buffer> <leader>s :w<CR><bar>:!black --line-length 79 %<CR>")
 vim.cmd("autocmd FileType python map <buffer> <C-p> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
 vim.cmd("autocmd FileType python imap <buffer> <C-p> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
 
