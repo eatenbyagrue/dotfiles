@@ -46,7 +46,7 @@ vim.cmd("set completeopt=menu,menuone,noselect")
 
 vim.cmd("colorscheme gruvbox")
  
-vim.cmd("autocmd FileType python map <buffer> <leader>s :w<CR><bar>:!black --line-length 80 %<CR>")
+vim.cmd("autocmd FileType python map <buffer> <leader>s :w<CR><bar>:!black --line-length 79 %<CR>")
 vim.cmd("autocmd FileType python map <buffer> <C-p> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
 vim.cmd("autocmd FileType python imap <buffer> <C-p> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
 
