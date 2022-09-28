@@ -44,14 +44,6 @@ bindsym $mod+i exec --no-startup-id firefox
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-# exec --no-startup-id volumeicon
-# bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-# exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
@@ -71,10 +63,10 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # bindsym $mod+o exec "~/.screenlayout/one-monitor.sh; sleep 3; exec notify-send 'One monitor'"
 # bindsym $mod+p exec "~/.screenlayout/two-monitors.sh sleep 3; exec notify-send 'Two monitors'"
 bindsym $mod+m move workspace to output left
-bindsym $mod+Shift+o exec "~/.screenlayout/edp1-x240.sh; sleep 3; exec notify-send 'edp1-x240'"
-bindsym $mod+Shift+p exec "~/.screenlayout/dp2-1-x240.sh; sleep 3; exec notify-send 'dp2-1-x240'"
-bindsym $mod+Shift+[ exec "~/.screenlayout/dp2-1-dp2-2-x240.sh; sleep 3; exec notify-send 'dp2-1-dp2-2-x240'"
-bindsym $mod+Shift+] exec "~/.screenlayout/dp2-2-dp2-1-x240.sh; sleep 3; exec notify-send 'dp2-1-dp2-2-x240'"
+bindsym $mod+Shift+i exec "~/.screenlayout/edp1-x240.sh; sleep 3; exec notify-send 'edp1-x240'"
+bindsym $mod+Shift+o exec "~/.screenlayout/dp2-1-x240.sh; sleep 3; exec notify-send 'dp2-1-x240'"
+bindsym $mod+Shift+p exec "~/.screenlayout/dp2-1-dp2-2-x240.sh; sleep 3; exec notify-send 'dp2-1-dp2-2-x240'"
+bindsym $mod+Shift+[ exec "~/.screenlayout/dp2-2-dp2-1-x240.sh; sleep 3; exec notify-send 'dp2-2-dp2-1-x240'"
 # bindsym $mod+p exec "~/.screenlayout/HDMIandeDP1.sh; sleep 3; exec notify-send 'HDMI and eDP1'"
 
 # Volume Control
@@ -552,39 +544,18 @@ mode "$mode_gaps_outer" {
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nitrogen --restore;
-# exec --no-startup-id compton -b
-# exec --no-startup-id nitrogen --restore; sleep 1
-#exec --no-startup-id manjaro-hello
 exec_always --no-startup-id xsetroot -solid "#FF2424"
-# Changes the screen temperature depending on the setting
-# Less strain on the eyes! (maybe)
 exec --no-startup-id redshift
-exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
+exec --no-startup-id keynav
 exec_always --no-startup-id keynav
 exec --no-startup-id emacs --daemon
-#exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly"
-#exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly/3lxlwac0rfmx.png_"
-exec_always --no-startup-id feh --no-fehbg --bg-center --recursive --randomize "${HOME}/Pictures/dailyminimal.com" --image-bg "#f1eff0"
-exec --no-startup-id keynav
-exec --no-startup-id emacs --daemon
-#exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly"
-#exec --no-startup-id feh --no-fehbg --bg-scale --recursive --randomize "${HOME}/Pictures/wallpapers/lowpoly/3lxlwac0rfmx.png_"
-# exec_always --no-startup-id feh --no-fehbg --bg-center --recursive --randomize "${HOME}/Pictures/dailyminimal.com" --image-bg "#f1eff0"
-# exec_always --no-startup-id feh --no-fehbg --bg-center "${HOME}/Pictures/dailyminimal.com/FAVtumblr_nvg4fkuSry1u16n75o1_1280.jpg" --image-bg "#f1eff0"
 exec_always --no-startup-id feh --no-fehbg --bg-center "${HOME}/Pictures/dailyminimal.com/FAVtumblr_p0lpa1mfMB1u16n75o1_12802.jpg" --image-bg "#161616"
-#exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_solarized
-# exec --no-startup-id start_conky_green
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-# exec_always --no-startup-id setxkbmap -option caps:ctrl_modifier
-# replace caps lock with ctrl. A life saver!
-# exec_always --no-startup-id setxkbmap -option caps:super
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always --no-startup-id sleep 4; xmodmap ~/.Xmodmap
+exec --no-startup-id pa-applet
+
+
