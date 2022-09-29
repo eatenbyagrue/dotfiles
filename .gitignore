@@ -7,7 +7,7 @@
 !.vimrc
 !.Xmodmap
 !.Xresources
-!.extend.Xresources
+# !.extend.Xresources
 !.spacemacs
 !.bashrc
 !.inputrc
