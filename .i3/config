@@ -60,14 +60,9 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # bindsym $mod+p exec "~/.screenlayout/dp1-x240.sh; sleep 3; exec notify-send 'DP1 Only'"
 # bindsym $mod+p exec "~/.screenlayout/hdmi-dp-x240.sh; sleep 3; exec notify-send 'Two Monitors HDMI and VGA'"
 
-# bindsym $mod+o exec "~/.screenlayout/one-monitor.sh; sleep 3; exec notify-send 'One monitor'"
-# bindsym $mod+p exec "~/.screenlayout/two-monitors.sh sleep 3; exec notify-send 'Two monitors'"
-bindsym $mod+m move workspace to output left
-bindsym $mod+Shift+i exec "~/.screenlayout/edp1-x240.sh; sleep 3; exec notify-send 'edp1-x240'"
-bindsym $mod+Shift+o exec "~/.screenlayout/dp2-1-x240.sh; sleep 3; exec notify-send 'dp2-1-x240'"
-bindsym $mod+Shift+p exec "~/.screenlayout/dp2-1-dp2-2-x240.sh; sleep 3; exec notify-send 'dp2-1-dp2-2-x240'"
-bindsym $mod+Shift+[ exec "~/.screenlayout/dp2-2-dp2-1-x240.sh; sleep 3; exec notify-send 'dp2-2-dp2-1-x240'"
-# bindsym $mod+p exec "~/.screenlayout/HDMIandeDP1.sh; sleep 3; exec notify-send 'HDMI and eDP1'"
+bindsym $mod+Shift+i exec "~/.screenlayout/one-monitor.sh; sleep 1; exec notify-send 'one-monitor.sh'"
+bindsym $mod+Shift+o exec "~/.screenlayout/one-monitor-2.sh; sleep 1; exec notify-send 'one-monitor-2.sh'"
+bindsym $mod+Shift+p exec "~/.screenlayout/two-monitors.sh; sleep 1; exec notify-send 'two-monitors.sh'"
 
 # Volume Control
 bindsym F11 "exec amixer set Master 5%-; exec notify-send 'Volume Down '"
@@ -551,11 +546,10 @@ exec --no-startup-id keynav
 exec_always --no-startup-id keynav
 exec --no-startup-id emacs --daemon
 exec_always --no-startup-id feh --no-fehbg --bg-center "${HOME}/Pictures/dailyminimal.com/FAVtumblr_p0lpa1mfMB1u16n75o1_12802.jpg" --image-bg "#161616"
-exec --no-startup-id blueman-applet
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always --no-startup-id sleep 4; xmodmap ~/.Xmodmap
-exec --no-startup-id pa-applet
-
-
+exec --no-startup-id sleep 4; pa-applet
+exec --no-startup-id sleep 4; blueman-applet
+exec --no-startup-id sleep 4; nm-applet
