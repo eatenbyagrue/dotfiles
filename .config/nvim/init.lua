@@ -29,6 +29,7 @@ o.expandtab = true
 o.number = true
 
 imap("fd", "<ESC>")
+nmap("<tab><tab>", "zA")
 nmap("<leader>ww", "<C-w><C-w>")
 nmap("<leader>wv", "<C-w><C-v>")
 nmap("<leader>s", ":w<CR>")
@@ -37,6 +38,7 @@ nmap("<leader>rf", ":e ~/.config/nvim/init.lua<CR>")
 nmap("<leader>q", ":bp<bar>sp<bar>bn<bar>bd<CR>")
 nmap("<leader><tab>", ":bn<CR>")
 nmap("<leader>n", ":noh<CR>")
+
 
 vim.keymap.set("n", "ge", function() 
     vim.diagnostic.setloclist()
