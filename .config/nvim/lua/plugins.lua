@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
 
   use 'Konfekt/FastFold'
   use 'tmhedberg/SimpylFold'
+  use 'duggiefresh/vim-easydir'
 
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
