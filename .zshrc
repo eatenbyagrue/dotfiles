@@ -160,7 +160,7 @@ venv_prompt_info() {
         else
             local name=$(basename "$VIRTUAL_ENV")
         fi
-        echo "${prompt_startsep}%F{red}venv:$name%f${prompt_endsep}"
+        echo "${prompt_startsep}%F{cyan}$name%f${prompt_endsep}"
     fi
 }
 
@@ -180,7 +180,7 @@ setprompt() {
     prompt_startsep='%F{blue}──[%f'
     prompt_endsep='%F{blue}]%f'
     local fade='%F{blue}────┄%f'
-    local dir='%F{red}%~%f'
+    local dir='%F{green}%1~%f'
     local date='%F{yellow}%D%f'
     local dtime='%F{yellow}%T%f'
     local job="%(1j.${prompt_startsep}%F{red}%j job.)%(2j.s.)%(1j.${prompt_endsep}.)%f"
@@ -198,8 +198,9 @@ setprompt() {
     local rstatus='%(?..%F{red}╾─[%F{blue}$?%F{red}]──┄)'
 
     export VIRTUAL_ENV_DISABLE_PROMPT=1
-    PROMPT="${upper_start}${userhost}${sep}${dir}${sep}${date}${sep}"
-    PROMPT+="${dtime}${prompt_endsep}${job}\$(venv_prompt_info)${vcs}${ranger}"
+    # PROMPT="${upper_start}${userhost}${sep}${dir}${sep}${date}${sep}"
+    PROMPT="${upper_start}${userhost}${sep}${dir}"
+    PROMPT+="${prompt_endsep}${job}\$(venv_prompt_info)${vcs}${ranger}"
     PROMPT+="\$(disp_prompt_info)${fade}$n"
 
     #PROMPT+="${lower_start}${rootwarn}${promptchar}${reset}"
