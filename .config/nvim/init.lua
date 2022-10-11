@@ -29,7 +29,6 @@ o.expandtab = true
 o.number = true
 
 imap("fd", "<ESC>")
-nmap("<tab><tab>", "zA")
 nmap("<leader>ww", "<C-w><C-w>")
 nmap("<leader>wv", "<C-w><C-v>")
 nmap("<leader>s", ":w<CR>")

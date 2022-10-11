@@ -12,9 +12,7 @@ return require('packer').startup(function(use)
   use 'morhetz/gruvbox'
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
-
-  use 'Konfekt/FastFold'
-  use 'tmhedberg/SimpylFold'
+  use 'preservim/tagbar'
   use 'duggiefresh/vim-easydir'
 
     use {
