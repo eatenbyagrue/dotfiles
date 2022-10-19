@@ -256,10 +256,11 @@ viewcert() {
 }
 
 alias 'v'='nvim'
+
 alias 'kag'='cd ~/documents/2022.PhD/machine-learning-exercises/kaggle/'
 
 # Cycle though history w/o arrow keys
 bindkey "\C-p" up-line-or-search
 bindkey "\C-n" down-line-or-search
 
-
+path+=~/.emacs.d/bin
