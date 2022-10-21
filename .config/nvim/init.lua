@@ -53,6 +53,6 @@ vim.cmd("colorscheme gruvbox")
  
 vim.cmd("autocmd FileType python map <buffer> <leader>s :w<CR><bar>:!black --line-length 79 %<CR>")
 vim.cmd("autocmd FileType python map <buffer> <leader><CR> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
-vim.cmd("autocmd FileType python imap <buffer> <leader><CR> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
+-- vim.cmd("autocmd FileType python imap <buffer> <leader><CR> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
 
 
