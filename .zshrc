@@ -262,4 +262,5 @@ alias 'kag'='cd ~/documents/2022.PhD/machine-learning-exercises/kaggle/'
 bindkey "\C-p" up-line-or-search
 bindkey "\C-n" down-line-or-search
 
-
+## Only Allow pip to install packages if a virtual env is active
+export PIP_REQUIRE_VIRTUALENV=true
