@@ -29,7 +29,6 @@ o.expandtab = true
 o.number = true
 
 imap("fd", "<ESC>")
-nmap("<tab><tab>", "zA")
 nmap("<leader>ww", "<C-w><C-w>")
 nmap("<leader>wv", "<C-w><C-v>")
 nmap("<leader>s", ":w<CR>")
@@ -39,6 +38,8 @@ nmap("<leader>rf", ":e ~/.config/nvim/init.lua<CR>")
 nmap("<leader>q", ":bp<bar>sp<bar>bn<bar>bd<CR>")
 nmap("<leader><tab>", ":bn<CR>")
 nmap("<leader>n", ":noh<CR>")
+
+nmap("<C-p>", ":TagbarOpenAutoClose<CR>")
 
 
 vim.keymap.set("n", "ge", function() 
@@ -51,7 +52,7 @@ vim.cmd("set completeopt=menu,menuone,noselect")
 vim.cmd("colorscheme gruvbox")
  
 vim.cmd("autocmd FileType python map <buffer> <leader>s :w<CR><bar>:!black --line-length 79 %<CR>")
-vim.cmd("autocmd FileType python map <buffer> <C-p> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
-vim.cmd("autocmd FileType python imap <buffer> <C-p> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
+vim.cmd("autocmd FileType python map <buffer> <leader><CR> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
+-- vim.cmd("autocmd FileType python imap <buffer> <leader><CR> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>")
 
 

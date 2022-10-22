@@ -256,11 +256,11 @@ viewcert() {
 }
 
 alias 'v'='nvim'
+
 alias 'kag'='cd ~/documents/2022.PhD/machine-learning-exercises/kaggle/'
 
 # Cycle though history w/o arrow keys
 bindkey "\C-p" up-line-or-search
 bindkey "\C-n" down-line-or-search
 
-## Only Allow pip to install packages if a virtual env is active
-export PIP_REQUIRE_VIRTUALENV=true
+path+=~/.emacs.d/bin
