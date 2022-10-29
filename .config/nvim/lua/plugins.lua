@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'preservim/tagbar'
   use 'duggiefresh/vim-easydir'
+  use 'lervag/vimtex'
 
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
