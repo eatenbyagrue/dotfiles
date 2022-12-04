@@ -7,6 +7,8 @@
 ;; Shows the full link always
 (setq org-descriptive-links nil)
 
+(setq org-startup-indented nil)
+
 (require 'org-inlinetask)
 
 (use-package citar
@@ -39,7 +41,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 16 :weight 'normal)
+(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 18 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "DejaVu Sans Mono" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
