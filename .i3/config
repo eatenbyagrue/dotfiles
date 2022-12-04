@@ -551,7 +551,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always --no-startup-id sleep 4; xmodmap ~/.Xmodmap
-exec --no-startup-id sleep 4; pa-applet
+exec --no-startup-id sleep 8; pa-applet
 exec --no-startup-id sleep 4; blueman-applet
 exec --no-startup-id sleep 4; nm-applet
 exec --no-startup-id sleep 4; pamac-tray

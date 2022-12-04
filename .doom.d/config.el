@@ -24,6 +24,9 @@
   (:map org-mode-map :package org ("C-c b" . #'org-cite-insert))
   (:map org-mode-map :package org ("C-c a" . #'citar-refresh))
 )
+
+(require 'org-indent)
+(org-indent-mode -1)
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "John Doe"
