@@ -7,8 +7,6 @@
 ;; Shows the full link always
 (setq org-descriptive-links nil)
 
-(setq org-startup-indented nil)
-
 (require 'org-inlinetask)
 
 (use-package citar
@@ -25,8 +23,8 @@
   (:map org-mode-map :package org ("C-c a" . #'citar-refresh))
 )
 
-(require 'org-indent)
-(org-indent-mode -1)
+(with-eval-after-load 'org (setq org-startup-indented nil))
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "John Doe"
