@@ -64,9 +64,6 @@ bindsym $mod+Shift+i exec "~/.screenlayout/one-monitor.sh; sleep 1; exec notify-
 bindsym $mod+Shift+o exec "~/.screenlayout/one-monitor-2.sh; sleep 1; exec notify-send 'one-monitor-2.sh'"
 bindsym $mod+Shift+p exec "~/.screenlayout/two-monitors.sh; sleep 1; exec notify-send 'two-monitors.sh'"
 
-# Volume Control
-bindsym F11 "exec amixer set Master 5%-; exec notify-send 'Volume Down '"
-bindsym F12 "exec amixer set Master 5%+; exec notify-send 'Volume Up '"
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec ranger
@@ -250,7 +247,7 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-
+for_window [ title="^pdfpc - present" ] border none floating enable
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 

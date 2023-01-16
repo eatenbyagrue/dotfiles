@@ -13,8 +13,6 @@ end
 
 
 require('plugins')
-require('lsp-config')
-require('nvim-cmp')
 
 local g = vim.g
 local o = vim.opt
